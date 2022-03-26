@@ -1,0 +1,12 @@
+[{
+	"resource": "/e:/python/vscode/usp/src/lista02/3_2FuncaoRecursiva.py",
+	"owner": "python",
+	"code": "invalid-name",
+	"severity": 2,
+	"message": "Argument name \"n\" doesn't conform to snake_case naming style",
+	"source": "pylint",
+	"startLineNumber": 3,
+	"startColumn": 14,
+	"endLineNumber": 3,
+	"endColumn": 15
+}]
