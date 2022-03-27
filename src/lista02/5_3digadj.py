@@ -1,4 +1,4 @@
-n = 191234536
+n = 1012445
 
 i = n
 while i // 10 != 0:
@@ -8,5 +8,5 @@ while i // 10 != 0:
         print("a resposta é sim")
         break
     i //= 10
-if j != k:
+if n < 10 or j != k:
     print("a resposta é não")
