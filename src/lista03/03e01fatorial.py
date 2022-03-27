@@ -1,6 +1,3 @@
-from re import I
-
-
 n = int(input("Digite o valor de n: "))
 
 i = 1
