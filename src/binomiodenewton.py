@@ -1,8 +1,3 @@
-print("Entre com o polinômio (x + b)^n")
-# b = int(input("Segundo termo (valor)): "))
-# n = int(input("Expoente: "))
-
-
 def fatorial(n):
     fat = 1
     while n > 1:
@@ -16,8 +11,8 @@ def coefNewton(n, k):
     return c
 
 
-n = 10
+n0 = int(input("Expoente: "))
 i = 0
-while i <= n:
-    print(coefNewton(n, i))
+while i <= n0:
+    print(coefNewton(n0, i))
     i += 1
