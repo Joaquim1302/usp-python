@@ -1,11 +1,8 @@
-count = 0
-while (count <= 10):
-    print(count, "Olá Mundo!")
-    count = count + 1
+def leitura():
+    x = int(input("Digite um valor: "))
+    while x <= 0:
+        x = int(input("Digite um valor: "))
+    return x
 
 
-def teste():
-    print("nada")
-
-
-teste()
+print(leitura())
