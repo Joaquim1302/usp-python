@@ -28,9 +28,7 @@ def main():
                  "Entre com um número de 0 a 1000")
     b = inputInt("digite a altura: ", -1, 1000,
                  "Entre com um número de 0 a 1000")
-    print("\n")
     print_retangulo_cheio(a, b)
-    print("\n")
 
 
 main()
