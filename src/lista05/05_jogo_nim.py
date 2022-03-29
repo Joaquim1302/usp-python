@@ -118,7 +118,8 @@ def main():
     print("\n" * 5)
     print("Bem-vindo ao jogo do NIM! Escolha:\n")
     eh_campeonato = inputInt("1 - para jogar uma partida isolada\n" +
-                             "2 - para jogar um campeonato ", 1, 2, "\nEscolha 1 ou 2\n")
+                             "2 - para jogar um campeonato ", 1, 2,
+                             "\nEscolha 1 ou 2\n")
     if eh_campeonato == 2:
         print("\nVocê escolheu um campeonato!\n")
         campeonato()

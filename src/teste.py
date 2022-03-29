@@ -31,14 +31,15 @@ def inputInt(msg, min, max, msgErr):
 #                  "Oops! Jogada inválida! Tente de novo.")
 # print(pecas)
 
-def multiplo(n):
-    for x in range(1, n):
-        if (n % x == 0):  # se o resto da divisão de n/x for 0 (múltiplo)
-            print(x)  # múltiplo
+def tabuada():
+    tab = 1
+    while tab <= 10:
+        print("Tabuada do", tab, ":", end="\t")
+        i = 1
+        print(tab*i, end="\t")
+        i = i + 1
+        print()
+        tab = tab + 1
 
 
-multiplo(1)
-multiplo(2)
-multiplo(3)
-multiplo(4)
-multiplo(5)
+tabuada()
