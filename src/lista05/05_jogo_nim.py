@@ -17,28 +17,28 @@ def inputInt(msg, minimo, maximo, msgErr):
 
 def quem_comeca(n, m):
     if (n % (m + 1)) == 0:
-        print("Você começa!")
+        print("\nVocê começa!\n")
         return JOGADOR
     else:
-        print("Computador começa!")
+        print("\nComputador começa!\n")
         return COMPUTADOR
 
 
 def msgRetirada(j, p):
-    jogadores = {1: "Você", 2: "O computador"}
+    jogadores = {1: "\nVocê", 2: "O computador"}
     if p == 1:
-        sP = " uma peça."
+        sP = "uma peça."
     else:
         sP = str(p) + " peças."
     msg = jogadores[j] + " tirou " + sP
     print(msg)
 
 
-def printResta(n):
+def msgResta(n):
     if n == 1:
-        print("Agora resta apenas uma peça no tabuleiro.")
+        print("Agora resta apenas uma peça no tabuleiro.\n")
     else:
-        print("Agora restam", n, "peças no tabuleiro.")
+        print("Agora restam", n, "peças no tabuleiro.\n")
 
 
 def maxPc(n, m):
@@ -68,7 +68,7 @@ def computador_escolhe_jogada(n, m):
 
 def usuario_escolhe_jogada(n, m):
     pecas = inputInt("Quantas peças você vai tirar? ", 1, maxPc(n, m),
-                     "Oops! Jogada inválida! Tente de novo.\n")
+                     "\nOops! Jogada inválida! Tente de novo.\n")
     msgRetirada(JOGADOR, pecas)
     return pecas
 
@@ -76,7 +76,7 @@ def usuario_escolhe_jogada(n, m):
 def partida():
     n = inputInt("Quantas peças? ", 2, 100, "Escolha entre 2 e 100 peças")
     m = inputInt("Limite de peças por jogada? ", 1,
-                 n - 1, "Escolha entre 1 e " + str(n - 1) + " peças")
+                 n - 1, "\nEscolha entre 1 e " + str(n - 1) + " peças\n")
 
     jogador = quem_comeca(n, m)
     while n > 0:
@@ -85,20 +85,21 @@ def partida():
         else:
             pecas = usuario_escolhe_jogada(n, m)
         n -= pecas
-        printResta(n)
-        jogador = 3 - jogador
+        if n != 0:
+            msgResta(n)
+            jogador = 3 - jogador
 
     if jogador == COMPUTADOR:
-        print("Fim do jogo! O computador ganhou!")
+        print("Fim do jogo! O computador ganhou!\n")
     else:
-        print("Fim do jogo! Você ganhou!")
+        print("Fim do jogo! Você ganhou!\n")
 
 
 def main():
+    print("\n" * 5)
     print("Bem-vindo ao jogo do NIM! Escolha:\n")
-    print("1 - para jogar uma partida isolada\n")
-    eh_campeonato = inputInt(
-        "2 - para jogar um campeonato ", 1, 2, "Escolha 1 ou 2")
+    eh_campeonato = inputInt("1 - para jogar uma partida isolada\n" +
+                             "2 - para jogar um campeonato ", 1, 2, "\nEscolha 1 ou 2\n")
     if eh_campeonato == 2:
         print("\nVocê escolheu um campeonato!\n")
     else:
