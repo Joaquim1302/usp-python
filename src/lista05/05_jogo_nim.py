@@ -91,8 +91,27 @@ def partida():
 
     if jogador == COMPUTADOR:
         print("Fim do jogo! O computador ganhou!\n")
+        return COMPUTADOR
     else:
         print("Fim do jogo! Você ganhou!\n")
+        return JOGADOR
+
+
+def campeonato():
+    ptsJogador = 0
+    ptsComputador = 0
+    i = 1
+
+    while i <= 3:
+        print("\n**** Rodada " + str(i) + " ****\n")
+        if partida() == JOGADOR:
+            ptsJogador += 1
+        else:
+            ptsComputador += 1
+        i += 1
+    print("**** Final do campeonato! ****\n")
+    print("Placar: Você " + str(ptsJogador) +
+          " X " + str(ptsComputador) + " Computador\n")
 
 
 def main():
@@ -102,8 +121,9 @@ def main():
                              "2 - para jogar um campeonato ", 1, 2, "\nEscolha 1 ou 2\n")
     if eh_campeonato == 2:
         print("\nVocê escolheu um campeonato!\n")
+        campeonato()
     else:
-        print("\nVocê escolheu um jogo!\n")
+        print("\nVocê escolheu uma partida isolada!\n")
         partida()
 
 
