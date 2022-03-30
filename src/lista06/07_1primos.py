@@ -1,12 +1,12 @@
 nums = [1, 5, 8, 13, 17, 35]
 
 
-def input_int(msg, minimo, maximo, msgErr):
+def input_int(msg, minimo, maximo, msg_err):
     while True:
         try:
             n = int(input(msg))
             if not (minimo <= n <= maximo):
-                raise ValueError(msgErr)
+                raise ValueError(msg_err)
         except ValueError as e:
             print(e)
         else:

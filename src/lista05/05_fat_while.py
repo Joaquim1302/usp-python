@@ -1,9 +1,9 @@
-def inputInt(msg, minimo, maximo, msgErr):
+def inputInt(msg, minimo, maximo, msg_err):
     while True:
         try:
             n = int(input(msg))
             if not (minimo <= n <= maximo):
-                raise ValueError(msgErr)
+                raise ValueError(msg_err)
         except ValueError as e:
             print(e)
         else:

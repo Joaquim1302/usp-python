@@ -13,6 +13,10 @@ def n_primos(n0):
     i = 2
     while i <= n0:
         if ehPrimo(i):
+            print(i, end=", ")
             count += 1
         i += 1
     return count
+
+
+n_primos(100)

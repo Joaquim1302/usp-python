@@ -28,21 +28,6 @@ def input_int(msg, minimo, maximo, msg_err):
     return n
 
 
-# pecas = inputInt("Quantas peças você vai tirar? ", 1, 5,
-#                  "Oops! Jogada inválida! Tente de novo.")
-# print(pecas)
-
-def tabuada():
-    tab = 1
-    while tab <= 10:
-        print("Tabuada do", tab, ":", end="\t")
-        i = 1
-        print(tab*i, end="\t")
-        i = i + 1
-        print()
-        tab = tab + 1
-
-
 def mdc(a, b):
     """(int,int) -> int
     Recebe dois inteiros positivos a e b e retorna
@@ -57,19 +42,19 @@ def mdc(a, b):
     return m
 
 
-def main():
+# def main():
 
-    # leia o tamanho da sequencia
-    n = int(input("Digite o tamanho da sequencia (>0): "))
+#     # leia o tamanho da sequencia
+#     n = int(input("Digite o tamanho da sequencia (>0): "))
 
-    mdc_atual = int(input("Digite o 1o. numero: "))
-    i = 1  # contador de numeros lidos
-    while i < n:
-        num = int(input("Digite o " + str(i+1) + "o. numero: "))
-        i = i + 1
-        mdc_atual = mdc(mdc_atual, num)
+#     mdc_atual = int(input("Digite o 1o. numero: "))
+#     i = 1  # contador de numeros lidos
+#     while i < n:
+#         num = int(input("Digite o " + str(i+1) + "o. numero: "))
+#         i = i + 1
+#         mdc_atual = mdc(mdc_atual, num)
 
-    print("O mdc eh", mdc_atual)
+#     print("O mdc eh", mdc_atual)
 
 
-main()  # chamada da funcao principal
+# main()  # chamada da funcao principal
