@@ -50,6 +50,7 @@ def mdc(a, b):
     """
 
     m = a
+
     while a % m != 0 or b % m != 0:
         m -= 1
 
