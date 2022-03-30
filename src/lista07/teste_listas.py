@@ -38,7 +38,8 @@ print(a)
 print("0:", a.count(0))
 
 alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
-            "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+            "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y",
+            "z"]
 print(alfabeto[0:13])
 print(len(alfabeto))
 letras = alfabeto[1:10]
@@ -51,3 +52,20 @@ del carnes_2[-1]
 
 print(carnes)
 print(carnes_2)
+#           0   1    2   3   4     5   6
+numeros = [17, 123, 87, 34, 66, 8398, 44]
+#          -7  -6   -5  -4  -3    -2  -1
+print("--------------------------")
+
+print(f"{2:3d}: {numeros[2]:d}")
+print(f"{-5:3d}: {numeros[-5]:d}")
+print(f"{9-8:3d}: {numeros[9-8]:d}")
+print(f"{-2:3d}: {numeros[2]:d}")
+print(f"{len(numeros)-1:3d}: {numeros[len(numeros)-1]:d}")
+print(f"{-7:3d}: {numeros[-7]:d}")
+print(f"{-4:3d}: {numeros[4]:d}")
+print(f"{-6:3d}: {numeros[6]:d}")
+
+table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 7678}
+for name, phone in table.items():
+    print(f'{name:10} ==> {phone:10d}')
