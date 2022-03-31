@@ -124,6 +124,10 @@ def n_palavras_diferentes(lista_palavras):
     return len(freq)
 
 
+def remove_pontuacao(texto):
+    return re.sub(r'[^\w\s]', '', texto)
+
+
 def tam_medio_palavra(lista_palavras, n_palavras):
 
     # print(lista_palavras)
@@ -149,20 +153,73 @@ def rel_type_token(lista_palavras, n_palavras):
 
 
 def rel_hapax_legomana(lista_palavras, n_palavras):
-    hlr = n_palavras_diferentes(lista_palavras) / n_palavras
+    hlr = n_palavras_unicas(lista_palavras) / n_palavras
     return hlr
+
+
+def tam_medio_sentenca(sentencas):
+    n_sentencas = len(sentencas)
+    sal = 0.0
+    i = 0
+    while i < n_sentencas:
+        sal += len(sentencas[i])
+        i += 1
+    sal /= n_sentencas
+    return sal
+
+
+def complex_sentenca(sentencas):
+    n_sentencas = len(sentencas)
+    i = 0
+    sac = 0.0
+    while i < n_sentencas:
+        sac += len(separa_frases(sentencas[i]))
+        i += 1
+    sac /= n_sentencas
+    return sac
+
+
+def tam_medio_frase(sentencas):
+    n_sentencas = len(sentencas)
+    i = 0
+    n_frases = 0
+    pal = 0.0
+    while i < n_sentencas:
+        frases = separa_frases(sentencas[i])
+        n_frases += len(frases)
+        j = 0
+        while j < len(frases):
+            pal += len(frases[j])
+            j += 1
+        i += 1
+    pal /= n_frases
+    return pal
 
 
 def calcula_assinatura(texto):
     '''Essa funcao recebe um texto e deve devolver a
     assinatura do texto.'''
-    lista_palavras = separa_palavras(texto)
+    lista_palavras = separa_palavras(remove_pontuacao(texto))
     n_palavras = len(lista_palavras)
+    sentencas = separa_sentencas(texto)
+
+    assinatura = []
 
     wal = tam_medio_palavra(lista_palavras, n_palavras)
     ttr = rel_type_token(lista_palavras, n_palavras)
     hlr = rel_hapax_legomana(lista_palavras, n_palavras)
-    print(wal, ttr, hlr)
+    sal = tam_medio_sentenca(sentencas)
+    sac = complex_sentenca(sentencas)
+    pal = tam_medio_frase(sentencas)
+
+    assinatura.append(wal)
+    assinatura.append(ttr)
+    assinatura.append(hlr)
+    assinatura.append(sal)
+    assinatura.append(sac)
+    assinatura.append(pal)
+
+    return assinatura
 
 
 # def avalia_textos(textos, ass_cp):
@@ -172,22 +229,13 @@ def calcula_assinatura(texto):
 #     pass
 
 
-def remove_pontuacao(texto):
-    return re.sub(r'[^\w\s]', '', texto)
-
-
 def main():
-    # texto = "Então resolveu ir brincar com a Máquina pra ser também " + \
-    #     "imperador dos filhos da mandioca. Mas as três cunhas deram " + \
-    #     "muitas risadas e falaram que isso de deuses era gorda mentira " + \
-    #     "antiga, que não tinha deus não e que com a máquina ninguém " + \
-    #     "não brinca porque ela mata. A máquina não era deus não, nem " + \
-    #     "possuía os distintivos femininos de que o herói gostava tanto."
     texto = "Então resolveu ir brincar com a Máquina pra ser também imperador dos filhos da mandioca. Mas as três cunhas deram muitas risadas e falaram que isso de deuses era gorda mentira antiga, que não tinha deus não e que com a máquina ninguém não brinca porque ela mata. A máquina não era deus não, nem possuía os distintivos femininos de que o herói gostava tanto. Era feita pelos homens. Se mexia com eletricidade com fogo com água com vento com fumo, os homens aproveitando as forças da natureza. Porém jacaré acreditou? nem o herói! Se levantou na cama e com um gesto, esse sim! bem guaçu de desdém, tó! batendo o antebraço esquerdo dentro do outro dobrado, mexeu com energia a munheca direita pras três cunhas e partiu. Nesse instante, falam, ele inventou o gesto famanado de ofensa: a pacova."
+
     # le assinatura a ser comparada com os textos fornecidos
     le_assinatura()
     # recebe um texto e devolve a assinatura do texto
-    calcula_assinatura(remove_pontuacao(texto))
+    print(calcula_assinatura(texto))
 
 
 main()
