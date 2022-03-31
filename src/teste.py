@@ -58,3 +58,22 @@ def mdc(a, b):
 
 
 # main()  # chamada da funcao principal
+
+def minimo_int_list(int_list):
+    i = 1
+    minimo = int_list[0]
+    while i < len(int_list):
+        if int_list[i] < minimo:
+            minimo = int_list[i]
+        i += 1
+    return minimo
+
+
+def maximo_int_list(int_list):
+    i = 1
+    maximo = int_list[0]
+    while i < len(int_list):
+        if int_list[i] > maximo:
+            maximo = int_list[i]
+        i += 1
+    return maximo
