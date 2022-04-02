@@ -21,6 +21,7 @@ def mat_imprime(matriz):
 
 
 def mat_sao_multiplicaveis(mat_1, mat_2):
+    """Retorna True se as matrizes são multiplicáveis"""
     cl_m_1 = len(mat_1[0])
     ln_m_2 = len(mat_2)
     return cl_m_1 == ln_m_2
