@@ -1,6 +1,6 @@
 import random
 from os import system, name
-import mod_teste
+import mod_parte02
 
 
 def clear():
@@ -16,8 +16,7 @@ def clear():
 # mensagem()
 # print(fibo(random.randint(1, 100)))
 # melhor evitar sintaxe acima para evitar criar/chamar funções de mesmo nome
-mod_teste.mensagem()
-print(mod_teste.fibo(random.randint(1, 100)))
+print(mod_parte02.fibo(random.randint(1, 100)))
 
 clear()
 
@@ -54,19 +53,3 @@ print(type(replace_char(["word"], "X", 2)))
 
 # if __name__ == "__main__":
 #     main()
-class Racional:
-    def __init__(self, n, d):
-        self.num = n
-        self.den = d
-
-    def __str__(self):
-        return "%d/%d" % (self.num, self.den)
-
-
-# testes
-a = Racional(2, 3)
-print(a)
-b = Racional(1, 4)
-print(b)
-
-print(round(-0.9999999999999998, 1))
