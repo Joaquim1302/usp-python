@@ -23,17 +23,17 @@ def soma_matrizes2(m_1, m_2):
     return m_1
 
 
-# print("\n" * 5)
-# ma = [[1, 2, 3], [4, 5, 6]]
-# mb = [[2, 3, 4], [5, 6, 7]]
-# print(soma_matrizes(ma, mb))
-# print(soma_matrizes2(ma, mb))
-# print()
-# ma = [[1], [1]]
-# mb = [[2], [5]]
-# print(soma_matrizes(ma, mb))
-# print()
+print("\n" * 5)
+ma = [[1, 2, 3], [4, 5, 6]]
+mb = [[2, 3, 4], [5, 6, 7]]
+print(soma_matrizes(ma, mb))
+print(soma_matrizes2(ma, mb))
+print()
+ma = [[1], [1]]
+mb = [[2], [5]]
+print(soma_matrizes(ma, mb))
+print()
 
-# ma = [[1]]
-# mb = [[1, 2, 3], [2, 3, 4], [5, 6, 7]]
-# print(soma_matrizes(ma, mb))
+ma = [[1]]
+mb = [[1, 2, 3], [2, 3, 4], [5, 6, 7]]
+print(soma_matrizes(ma, mb))
