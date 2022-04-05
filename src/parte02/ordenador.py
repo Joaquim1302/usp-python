@@ -1,4 +1,4 @@
-class Ordena:
+class Ordenador:
 
     def __init__(self, lista):
         self.lista = lista
@@ -41,7 +41,7 @@ class Ordena:
 if __name__ == "__main__":
     lst = [36, -40, 29, 16, 27, -22, 1, -41, 10, 1]
     print(lst)
-    sorted_list = Ordena(lst).sort_selection()
+    sorted_list = Ordenador(lst).sort_selection()
     print(sorted_list)
-    sorted_list = Ordena(lst).short_buble_sort()
+    sorted_list = Ordenador(lst).short_buble_sort()
     print(sorted_list)
