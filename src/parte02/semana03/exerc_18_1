@@ -39,18 +39,19 @@ class Racional:
 
     def add(self, other):
         # mínimo múltiplo comum
-        a = self.den
-        b = other.den
-        return a * (b / self.mdc(other))
+        mmc = self.mmc(other)
+        num = mmc * ((self.num / self.den) + (other.num / other.den))
+        return Racional(int(num), int(mmc))
+
         # escreva aqui o seu codigo para os metodos
-        #
-        #
         # sub
         # e ao menos um teste para cada metodo
 
         # testes
-r1 = Racional(2, 60)
-r2 = Racional(1, 100)
+
+
+r1 = Racional(2, 5)
+r2 = Racional(1, 4)
 # print(r1, '*', r2, '=>', r1.mul(r2))
 # # teste do div:
 # print(r1, '/', r2, '=>', r1.div(r2))
@@ -58,3 +59,4 @@ r2 = Racional(1, 100)
 # outros testes
 print("mdc de", r1, 'e', r2, '=>', r1.mdc(r2))
 print("mmc de", r1, 'e', r2, '=>', r1.mmc(r2))
+print(r1, '+', r2, '=>', r1.add(r2))
