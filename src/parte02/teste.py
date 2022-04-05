@@ -68,3 +68,5 @@ a = Racional(2, 3)
 print(a)
 b = Racional(1, 4)
 print(b)
+
+print(round(-0.9999999999999998, 1))
