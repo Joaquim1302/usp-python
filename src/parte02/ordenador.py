@@ -39,9 +39,9 @@ class Ordenador:
 
 
 if __name__ == "__main__":
-    lst = [36, -40, 29, 16, 27, -22, 1, -41, 10, 1]
+    lst = [5, 2, 1, 3, 4]
     print(lst)
-    sorted_list = Ordenador(lst).sort_selection()
+    sorted_list = Ordenador(lst).buble_sort()
     print(sorted_list)
     sorted_list = Ordenador(lst).short_buble_sort()
     print(sorted_list)
