@@ -1,4 +1,3 @@
-from pyparsing import line_start
 import ordenador
 import mod_parte02
 import buscador
@@ -27,6 +26,11 @@ class TestaOrdenador:
         sorted_list = ordenador.Ordenador(lista).buble_sort()
         assert self.is_sorted(sorted_list)
 
+    def test_insertion_sort(self):
+        lista = mod_parte02.Parte02().cria_lista(1000)
+        sorted_list = ordenador.Ordenador(lista).insertion_sort()
+        assert self.is_sorted(sorted_list)
+
 
 class TestaBuscador:
 
@@ -38,3 +42,8 @@ class TestaBuscador:
         lst = self.cria_lista()
         num = lst[100]
         assert buscador.Buscador(lst).seq_search(num)
+
+    def test_binary_search(self):
+        lst = self.cria_lista()
+        num = lst[99]
+        assert buscador.Buscador(lst).binary_search(num)

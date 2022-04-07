@@ -37,11 +37,24 @@ class Ordenador:
                 return lista
         return lista
 
+    def insertion_sort(self):
+        lista = self.lista
+        for index in range(1, len(lista)):
+            currentvalue = lista[index]
+            position = index
+            while position > 0 and lista[position-1] > currentvalue:
+                lista[position] = lista[position-1]
+                position = position-1
+            lista[position] = currentvalue
+        return lista
+
 
 if __name__ == "__main__":
-    lst = [5, 2, 1, 3, 4]
+    lst = [54, 26, 93, 17, 77, 31, 44, 55, 20]
     print(lst)
     sorted_list = Ordenador(lst).buble_sort()
     print(sorted_list)
     sorted_list = Ordenador(lst).short_buble_sort()
+    print(sorted_list)
+    sorted_list = Ordenador(lst).insertion_sort()
     print(sorted_list)
