@@ -1,8 +1,8 @@
-def fat_rec(n):
-    if n <= 1:
+def fatorial(x):
+    if x <= 1:
         return 1
-    return n * fat_rec(n - 1)
+    return x * fatorial(x - 1)
 
 
-if __name__ == "__main__":
-    print(fat_rec(5))
+# if __name__ == "__main__":
+#     print(fatorial(4))
